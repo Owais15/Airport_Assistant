@@ -57,7 +57,7 @@ async function handleUserMessage() {
   }
 
   if (creatorQs.some(q => lowerText.includes(q))) {
-    addMessage("I was created by a developer to help answer questions about airports ✈️", "bot", true);
+    addMessage("I was created by a mosquito to help answer questions about airports ✈️", "bot", true);
     return;
   }
 
