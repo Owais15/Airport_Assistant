@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Airport Chatbot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="chat-container">
+    <div id="header">
+      <h1>AirportBot ✈️</h1>
+      <p class="subtitle">Ask me anything about airports, flights, and travel info!</p>
+    </div>
+
+    <div id="chat-box"></div>
+
+    <div id="input-area">
+      <input type="text" id="user-input" placeholder="Ask about airports..." />
+      <button id="send-btn" title="Send" class="icon-button">➤</button>
+      <button id="toggle-sidebar" title="Toggle Sidebar" class="icon-button">☰</button>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="hidden">
+    <h2>Recent Chats</h2>
+    <ul id="recent-chats"></ul>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
