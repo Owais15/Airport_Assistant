@@ -3,26 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Airport Chatbot</title>
+  <meta name="description" content="AirportBot - Get information about airports, flights, and travel">
+  <meta name="theme-color" content="#4b7bec">
+  <title>AirportBot - Your Airport Assistant</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="chat-container">
     <div id="header">
-      <h1>AirportBot ✈️</h1>
+      <h1>KBot ✈️</h1>
       <p class="subtitle">Ask me anything about airports, flights, and travel info!</p>
     </div>
 
     <div id="chat-box"></div>
 
     <div id="input-area">
-      <input type="text" id="user-input" placeholder="Ask about airports..." />
-      <button id="send-btn" title="Send" class="icon-button">➤</button>
-      <button id="toggle-sidebar" title="Toggle Sidebar" class="icon-button">☰</button>
+      <div class="input-wrapper">
+        <input type="text" id="user-input" placeholder="Ask about airports..." />
+        <button id="send-btn" title="Send" class="icon-button">➤</button>
+      </div>
+      <button id="toggle-sidebar" title="Toggle Recent Chats" class="icon-button">☰</button>
     </div>
   </div>
 
-  <aside id="sidebar" class="hidden">
+  <aside id="sidebar">
     <h2>Recent Chats</h2>
     <ul id="recent-chats"></ul>
   </aside>
