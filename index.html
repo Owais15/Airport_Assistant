@@ -7,30 +7,63 @@
   <meta name="theme-color" content="#4b7bec">
   <title>AirportBot - Your Airport Assistant</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
-  <div id="chat-container">
-    <div id="header">
-      <h1>KBot ✈️</h1>
-      <p class="subtitle">Ask me anything about airports, flights, and travel info!</p>
+  <!-- New Navigation Bar -->
+  <nav class="nav-bar">
+    <div class="nav-logo">
+      <i class="fas fa-plane"></i>
+      <span>AirportBot</span>
     </div>
-
-    <div id="chat-box"></div>
-
-    <div id="input-area">
-      <div class="input-wrapper">
-        <input type="text" id="user-input" placeholder="Ask about airports..." />
-        <button id="send-btn" title="Send" class="icon-button">➤</button>
+    <div class="nav-links">
+      <a href="home.html" class="nav-link">Home</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <button class="nav-mobile-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+  
+  <div class="main-content">
+    <div id="chat-container">
+      <div id="header">
+        <h1>KBot ✈️</h1>
+        <p class="subtitle">Ask me anything about airports, flights, and travel info!</p>
       </div>
-      <button id="toggle-sidebar" title="Toggle Recent Chats" class="icon-button">☰</button>
+
+      <div id="chat-box"></div>
+
+      <div id="input-area">
+        <div class="input-wrapper">
+          <input type="text" id="user-input" placeholder="Ask about airports..." />
+          <button id="send-btn" title="Send" class="icon-button">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          <button id="stop-btn" title="Stop Generation" class="icon-button">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <button id="toggle-sidebar" title="Toggle Recent Chats" class="icon-button">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
     </div>
+
+    <aside id="sidebar">
+      <h2>Recent Chats</h2>
+      <ul id="recent-chats"></ul>
+    </aside>
   </div>
 
-  <aside id="sidebar">
-    <h2>Recent Chats</h2>
-    <ul id="recent-chats"></ul>
-  </aside>
-
   <script src="script.js"></script>
+  <script>
+    // Mobile nav toggle functionality
+    document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
