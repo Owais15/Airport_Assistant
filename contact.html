@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Contact AirportBot - Get in touch with our team">
+  <meta name="theme-color" content="#4b7bec">
+  <title>Contact - AirportBot</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="nav-bar">
+    <div class="nav-logo">
+      <i class="fas fa-plane"></i>
+      <span>AirportBot</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+    </div>
+    <button class="nav-mobile-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+  
+  <!-- Contact Page Content -->
+  <div class="page-content">
+    <div class="page-header">
+      <h1>Contact Us</h1>
+      <p>We're here to help with any questions about AirportBot</p>
+    </div>
+    
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <p>We'd love to hear from you! Whether you have a question about features, need help with the app, or want to provide feedback, our team is ready to assist.</p>
+        
+        <div class="contact-methods">
+          <div class="contact-method">
+            <i class="fas fa-envelope"></i>
+            <div class="method-details">
+              <h3>Email Us</h3>
+              <p>support@airportbot.com</p>
+              <p>We typically respond within 24 hours</p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <i class="fas fa-phone-alt"></i>
+            <div class="method-details">
+              <h3>Call Us</h3>
+              <p>+1 (555) 123-4567</p>
+              <p>Monday-Friday, 9am-5pm EST</p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="method-details">
+              <h3>Visit Us</h3>
+              <p>123 Airport Way</p>
+              <p>Tech City, CA 90210</p>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <i class="fas fa-comment-dots"></i>
+            <div class="method-details">
+              <h3>Live Chat</h3>
+              <p>Available on our app</p>
+              <p>24/7 Support</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="social-connect">
+          <h3>Connect With Us</h3>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form-container">
+        <h2>Send Us a Message</h2>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject" required>
+              <option value="" disabled selected>Select a subject</option>
+              <option value="support">Technical Support</option>
+              <option value="feedback">Feedback</option>
+              <option value="features">Feature Request</option>
+              <option value="business">Business Inquiry</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Type your message here" required></textarea>
+          </div>
+          
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="newsletter" name="newsletter">
+            <label for="newsletter">Subscribe to our newsletter for travel tips and updates</label>
+          </div>
+          
+          <button type="submit" class="primary-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-question">
+          <div class="question">
+            <h3>How accurate is the flight information?</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="answer">
+            <p>AirportBot aggregates information from multiple reliable sources to provide the most accurate information possible. However, for real-time flight status, we always recommend checking with the airline directly.</p>
+          </div>
+        </div>
+        
+        <div class="faq-question">
+          <div class="question">
+            <h3>Is my conversation with AirportBot private?</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="answer">
+            <p>Yes, we take your privacy seriously. Your conversations are not shared with third parties, and we only use anonymized data to improve our AI's performance.</p>
+          </div>
+        </div>
+        
+        <div class="faq-question">
+          <div class="question">
+            <h3>Can I use AirportBot offline?</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="answer">
+            <p>Currently, AirportBot requires an internet connection to access its database and provide responses. We're exploring offline capabilities for future updates.</p>
+          </div>
+        </div>
+        
+        <div class="faq-question">
+          <div class="question">
+            <h3>How do I report inaccurate information?</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="answer">
+            <p>If you notice any inaccuracies in our responses, please use the contact form above to report them. Include as much detail as possible to help us improve.</p>
