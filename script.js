@@ -102,6 +102,22 @@ async function handleUserMessage() {
     addMessage("I was created by a mosquito to help answer questions about airports ✈️", "bot", true);
     return;
   }
+
+  // Detect flight route queries like "flights from Delhi to Mumbai"
+const routeRegex = /flights?\s+from\s+([\w\s]+)\s+to\s+([\w\s]+)/i;
+const routeMatch = text.match(routeRegex);
+if (routeMatch) {
+  const source = routeMatch[1].trim();
+  const destination = routeMatch[2].trim();
+  addMessage(`Searching flights from **${source}** to **${destination}**...`, "bot");
+
+  const reply = await fetchGeminiResponse(
+    `List available flights or airlines from ${source} to ${destination}. Only include real airports and valid airlines.`
+  );
+  addMessage(reply, "bot", true);
+  return;
+}
+
   const isAirportRelated = /\b(airport|flight|terminal|airline|IATA|code|departure|arrival|baggage|check-in|boarding)\b/i.test(text);
 
   if (!isAirportRelated) {
@@ -170,6 +186,22 @@ userInput.addEventListener("keydown", (e) => {
 // Add initial welcome message when page loads
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
-    addMessage("Welcome! I'm KBot. Ask me anything about airports, flights, terminals, or travel information.", "bot", true);
+    addMessage("Welcome! I'm AirportBot. Ask me anything about airports, flights, terminals, or travel information.", "bot", true);
   }, 500);
+});
+
+
+// Handle mobile navigation
+document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
+  document.querySelector('.nav-links').classList.toggle('active');
+});
+
+// Close mobile nav when clicking elsewhere
+document.addEventListener('click', function(event) {
+  const navLinks = document.querySelector('.nav-links');
+  const mobileToggle = document.querySelector('.nav-mobile-toggle');
+  
+  if (!navLinks.contains(event.target) && !mobileToggle.contains(event.target) && navLinks.classList.contains('active')) {
+    navLinks.classList.remove('active');
+  }
 });
