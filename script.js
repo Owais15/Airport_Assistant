@@ -104,13 +104,15 @@ async function handleUserMessage() {
   }
   const isAirportRelated = /\b(airport|flight|terminal|airline|IATA|code|departure|arrival|baggage|check-in|boarding)\b/i.test(text);
 
-  if (isAirportRelated) {
-    addMessage("Let me check that for you...", "bot");
-    const reply = await fetchGeminiResponse(text);
-    addMessage(reply, "bot", true);
-  } else {
-    addMessage("I can only help with questions related to **airports**. Try asking about airport codes, locations, terminals, etc.", "bot", true);
+  if (!isAirportRelated) {
+    addMessage("I specialize in **airport-related** topics only. I can't help with programming, math, or unrelated questions.", "bot", true);
+    return;
   }
+  
+  addMessage("Let me check that for you...", "bot");
+  const reply = await fetchGeminiResponse(text);
+  addMessage(reply, "bot", true);
+  
 }
 
 // Save to recent chats
