@@ -10,14 +10,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
-  <!-- Navigation Bar -->
+  <!-- New Navigation Bar -->
   <nav class="nav-bar">
     <div class="nav-logo">
       <i class="fas fa-plane"></i>
       <span>AirportBot</span>
     </div>
     <div class="nav-links">
-      <a href="index.html" class="nav-link active">Home</a>
+      <a href="home.html" class="nav-link">Home</a>
       <a href="features.html" class="nav-link">Features</a>
       <a href="about.html" class="nav-link">About</a>
       <a href="contact.html" class="nav-link">Contact</a>
@@ -27,105 +27,42 @@
     </button>
   </nav>
   
-  <!-- Home Page Content -->
-  <div class="page-content">
-    <div class="hero-section">
-      <div class="hero-content">
-        <h1>Your Personal Airport Assistant</h1>
-        <p>Get real-time information about airports, flights, and travel with our AI-powered assistant.</p>
-        <div class="cta-buttons">
-          <a href="index.html" class="primary-btn">Try KBot Now</a>
-          <a href="features.html" class="secondary-btn">Learn More</a>
-        </div>
+  <div class="main-content">
+    <div id="chat-container">
+      <div id="header">
+        <h1>KBot ✈️</h1>
+        <p class="subtitle">Ask me anything about airports, flights, and travel info!</p>
       </div>
-      <div class="hero-image">
-        <img src="https://img.freepik.com/premium-vector/cute-bot-with-sailorhat-vector-illustration_969863-6824.jpg" alt="Airport Bot Illustration">
-      </div>
-    </div>
-    
-    <div class="features-preview">
-      <h2>How AirportBot Helps You</h2>
-      <div class="feature-cards">
-        <div class="feature-card">
-          <i class="fas fa-search"></i>
-          <h3>Airport Information</h3>
-          <p>Get details about any airport worldwide, including facilities, terminals, and more.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-plane-departure"></i>
-          <h3>Flight Routes</h3>
-          <p>Search for flight routes between destinations and get airline information.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-info-circle"></i>
-          <h3>Travel Tips</h3>
-          <p>Access helpful travel advice and airport navigation tips.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="testimonials">
-      <h2>What Our Users Say</h2>
-      <div class="testimonial-slider">
-        <div class="testimonial">
-          <p>"AirportBot helped me find my way around JFK airport during a confusing layover. Saved me so much time!"</p>
-          <div class="testimonial-author">- Sarah T.</div>
-        </div>
-        <div class="testimonial">
-          <p>"I use this tool before every trip to check flight options. The information is accurate and helpful!"</p>
-          <div class="testimonial-author">- Michael R.</div>
-        </div>
-        <div class="testimonial">
-          <p>"Great for frequent travelers. I get quick answers about airport services without having to search multiple websites."</p>
-          <div class="testimonial-author">- Jamie L.</div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="call-to-action">
-      <h2>Ready to Get Started?</h2>
-      <p>Try AirportBot today and make your travel planning easier.</p>
-      <a href="index.html" class="primary-btn">Try KBot Now</a>
-    </div>
-  </div>
-  
-  <footer>
-    <div class="footer-content">
-      <div class="footer-logo">
-        <i class="fas fa-plane"></i>
-        <span>AirportBot</span>
-      </div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="features.html">Features</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 AirportBot. All rights reserved.</p>
-    </div>
-  </footer>
 
+      <div id="chat-box"></div>
+
+      <div id="input-area">
+        <div class="input-wrapper">
+          <input type="text" id="user-input" placeholder="Ask about airports..." />
+          <button id="send-btn" title="Send" class="icon-button">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          <button id="stop-btn" title="Stop Generation" class="icon-button">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <button id="toggle-sidebar" title="Toggle Recent Chats" class="icon-button">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <aside id="sidebar">
+      <h2>Recent Chats</h2>
+      <ul id="recent-chats"></ul>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
   <script>
     // Mobile nav toggle functionality
     document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
       document.querySelector('.nav-links').classList.toggle('active');
-    });
-    
-    // Close mobile nav when clicking elsewhere
-    document.addEventListener('click', function(event) {
-      const navLinks = document.querySelector('.nav-links');
-      const mobileToggle = document.querySelector('.nav-mobile-toggle');
-      
-      if (!navLinks.contains(event.target) && !mobileToggle.contains(event.target) && navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-      }
     });
   </script>
 </body>
