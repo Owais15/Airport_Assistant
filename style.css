@@ -1149,7 +1149,196 @@ body.sidebar-visible #chat-container {
   width: calc(100% - 300px);
 }
 
-/* Mobile responsive */
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column;
+  }
+  
+  .about-section {
+    flex-direction: column;
+  }
+  
+  .contact-container {
+    flex-direction: column;
+  }
+  
+  .feature-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature-card {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .feature-item {
+    flex-direction: column;
+  }
+  
+  .feature-icon {
+    width: 100%;
+    padding: 20px 0;
+  }
+  
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .timeline::before {
+    left: 40px;
+  }
+  
+  .timeline-item {
+    padding-left: 80px;
+  }
+  
+  .timeline-dot {
+    left: 31px;
+  }
+  
+  .timeline-date {
+    left: 0;
+    width: 25px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 768px) {
+  /* Navigation */
+  .nav-links {
+    display: none;
+  }
+  
+  .nav-mobile-toggle {
+    display: block;
+  }
+  
+  /* Show mobile menu when active */
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-dark);
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  /* Page Headers */
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .page-header p {
+    font-size: 1rem;
+  }
+  
+  /* Hero Section */
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  /* Feature Cards */
+  .feature-cards {
+    gap: 20px;
+  }
+  
+  /* Call to Action */
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .secondary-btn {
+    margin-left: 0;
+  }
+  
+  /* Testimonials */
+  .testimonial {
+    flex: 0 0 calc(100% - 20px);
+  }
+  
+  /* Team Section */
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  /* Contact Page */
+  .contact-methods {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .footer-column {
+    width: 100%;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  /* Chat interface adjustments */
+  .message {
+    max-width: 90%;
+  }
+  
+  #header h1 {
+    font-size: 1.5rem;
+  }
+  
+  /* Form elements */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px;
+  }
+  
+  /* Page content */
+  .page-content {
+    padding: 20px 15px;
+  }
+  
+  /* Values and features */
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Timeline */
+  .timeline-content {
+    padding: 15px;
+  }
+  
+  /* FAQs */
+  .question h3 {
+    font-size: 1rem;
+  }
+  
+  /* Buttons */
+  .primary-btn, .secondary-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Fix for sidebar on mobile (existing media query with enhancements) */
 @media (max-width: 768px) {
   #sidebar {
     position: fixed;
@@ -1158,9 +1347,56 @@ body.sidebar-visible #chat-container {
     height: calc(100vh - 70px);
     z-index: 900;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    transform: translateX(100%);
+  }
+  
+  #sidebar.hidden {
+    transform: translateX(100%);
+  }
+  
+  #sidebar:not(.hidden) {
+    transform: translateX(0);
   }
   
   body.sidebar-visible #chat-container {
     width: 100%;
+  }
+  
+  /* Main content layout */
+  .main-content {
+    flex-direction: column;
+  }
+  
+  /* Input area */
+  #input-area {
+    padding: 10px;
+  }
+  
+  #user-input {
+    padding: 10px 45px 10px 15px;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  #header {
+    padding: 10px;
+  }
+  
+  #header h1 {
+    font-size: 1.4rem;
+  }
+  
+  .subtitle {
+    font-size: 0.8rem;
+  }
+  
+  #chat-box {
+    min-height: 200px;
+  }
+  
+  #input-area {
+    padding: 8px;
   }
 }
